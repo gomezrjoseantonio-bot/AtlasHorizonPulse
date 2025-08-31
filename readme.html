@@ -1,0 +1,85 @@
+# ATLAS — Horizon (Invest) & Pulse (Personal)
+
+Base de producto para propietarios/inversores y finanzas personales en una sola app, con dos módulos:
+- *Horizon* (INVEST) · acento *Navy*
+- *Pulse* (PERSONAL) · acento *Turquesa*
+
+> Este repositorio solo contiene la *estructura, theming dual y navegación*. No hay lógica de negocio ni datos de demo.
+
+---
+
+## 1) Principios de producto
+
+- *Dos módulos, una app*: selector “Horizon | Pulse” en la barra superior.
+- *Sin demo: la app arranca **vacía*. Habrá import/export más adelante.
+- */inbox único*: una ruta global para la ingesta de documentos y, más adelante, movimientos.
+- *Sin inventos de marca: colores **fijos*. Prohibido crear paletas “creativas”.
+- *Iconos únicos: solo **Lucide* (outline 1.5). Nada de otros packs.
+- *Cero ruido*: sin overlays QA, sin banners, sin datos zombies.
+
+---
+
+## 2) Stack
+
+- *Vite + React + TypeScript + TailwindCSS*
+- *lucide-react* (iconografía)
+- *Netlify* para despliegue (SPA)
+
+> Prohibido: *Next.js*, CSS frameworks adicionales, packs de iconos alternativos.
+
+---
+
+## 3) Diseño (tokens oficiales)
+
+*Marca (inmutables)*
+- --brand-navy  #022D5E  (Horizon primario)
+- --brand-teal  #2EB0CB  (Pulse primario)
+
+*Neutros*
+- Texto principal #111827 · Secundario #6B7280 · Iconos muted #9CA3AF
+- Bordes #E5E7EB · Fondo base #F8FAFC · Superficie #FFFFFF
+
+*Semánticos*
+- Éxito #16A34A · Aviso #F59E0B · Error #DC2626 · Info #2563EB
+
+*Temas*
+- *Horizon*: primario = Navy, acento = Teal
+- *Pulse*: primario = Teal, acento = Navy
+
+*Tipografía*
+- UI: *Inter* (400/500/600)
+- Números: *tabulares* (para KPIs/tablados)
+
+*Patrones UI*
+- Radio 12 px · sombra sutil · focus visible (ring del color primario del tema)
+- Importes en formato ES 1.234,56 €
+- Cero NaN (mostrar “—” + tooltip)
+
+---
+
+## 4) Navegación
+
+*Selector* (header): Horizon | Pulse (cambia *tema* y *tabs*)
+
+*Tabs Horizon*
+- Panel /panel
+- Inmuebles /inmuebles (subtabs: Cartera, Contratos, Préstamos, Gastos & Docs, Análisis)
+- Tesorería /tesoreria (Radar, Movimientos, Reglas & Sweeps, Alertas)
+- Fiscalidad /fiscalidad
+- Proyección /proyeccion (Inmuebles, Personal, Consolidado)
+- Configuración /configuracion (Bancos & Cuentas, Plan & Facturación, Usuarios & Roles, Preferencias & Datos)
+
+*Tabs Pulse*
+- Panel /panel (contenido específico más adelante)
+- Ingresos /ingresos
+- Gastos /gastos
+- Tesorería Personal /tesoreria-personal (Cuentas, Movimientos, Alertas)
+- Proyección Personal /proyeccion-personal
+- Configuración /configuracion
+
+*Ruta global*
+- */inbox* (acceso desde botón en header + CTA en Panel). No es tab superior.
+
+---
+
+## 5) Estructura de carpetas (objetivo)
